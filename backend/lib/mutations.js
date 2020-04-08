@@ -10,15 +10,13 @@ const dataDB = {
 }
 
 module.exports ={
- 
-    createUser: async (root, {input} ) => {
-      try {
-    const connection = mysql.createConnection(dataDB)
-    await connection.query( "insert into usuarios SET ?", input).then(data => data)
-    return data
-  } catch (error) {
-    
+  createUser: async (root, {input} ) => {
+    try {
+      const connection = mysql.createConnection(dataDB)
+      await connection.query( "insert into usuarios SET ?", input).then(data => data)
+      return data
+    }catch (error) {
+      console.log(error)
+    }
   }
-}
-
 }

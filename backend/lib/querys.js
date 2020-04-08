@@ -7,9 +7,10 @@ const dataDB = {
   password: 'admin',  
   database: 'da3_db'
 }
+
 module.exports ={
-  Query: {
-    getUsers: async () => {
+   
+  getUsers: async () => {
       const connection = await mysql.createConnection(dataDB)
       const [rows, fields] = await connection.execute('SELECT * FROM usuarios');
       return rows
@@ -20,4 +21,3 @@ module.exports ={
       return rows[0]
     },  
   }
-}

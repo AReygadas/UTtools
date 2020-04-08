@@ -6,7 +6,7 @@ type Usuario{
     Perfil: String   
 }
 
-type Query {
+type Query{
   getUsers:[Usuario]
   getUser(id: ID): Usuario
 }
@@ -19,8 +19,7 @@ input UserInput{
     Perfil: String   
 }
 
-type Mutation
- {
+type Mutation {
   createUser(input: UserInput): Usuario
 }
 
